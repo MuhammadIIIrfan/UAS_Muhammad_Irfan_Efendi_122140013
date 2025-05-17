@@ -1,0 +1,1 @@
+import './index.css'; // atau './tailwind.css'
