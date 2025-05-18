@@ -1,19 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
+import Home from "./Home";
 import Berita from "./pages/Berita";
 import Edukasi from "./pages/Edukasi";
-import NotFound from "./pages/NotFound";
+import Pantau from "./pages/Pantau";
+import Profil from "./pages/Profil";
+import Kamus from "./pages/Kamus";
 
 function App() {
   return (
-    <Router>
+    <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Berita" element={<Berita />} />
-        <Route path="/Edukasi" element={<Edukasi />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/berita" element={<Berita />} />
+        <Route path="/edukasi" element={<Edukasi />} />
+        <Route path="/pantau" element={<Pantau />} />
+        <Route path="/profil" element={<Profil />} />
+        <Route path="/kamus" element={<Kamus />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
