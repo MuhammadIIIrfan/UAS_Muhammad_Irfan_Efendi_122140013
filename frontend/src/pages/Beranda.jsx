@@ -21,9 +21,9 @@ export default function Beranda() {
   // Fungsi ucapan berdasarkan jam
   const getGreeting = () => {
     const hour = now.getHours();
-    if (hour < 12) return "Selamat Pagi";
-    if (hour < 15) return "Selamat Siang";
-    if (hour < 18) return "Selamat Sore";
+    if (hour < 12) return "SELAMAT PAGI";
+    if (hour < 15) return "SELAMAT SIANG";
+    if (hour < 18) return "SELAMAT SORE";
     return "Selamat Malam";
   };
 
@@ -57,13 +57,14 @@ export default function Beranda() {
             fontSize: "4rem",
             textShadow: "2px 2px 8px rgba(0,0,0,0.5)",
             textAlign: "center", // pastikan text header rata kiri
+            color: "rgb(0, 0, 0)", // warna teks header
           }}
         >
           {getGreeting()} 
         </h1>
         <p style={{ textAlign: "center", marginBottom: "0.5rem" }}>
           {" "}
-          <span style={{ fontWeight: "bold" , fontSize: "1.5rem" }}>
+          <span style={{ fontWeight: "bold" , fontSize: "3rem", color: "rgb(255, 205, 205)" }}>
             {now.toLocaleTimeString("id-ID", {
               hour: "2-digit",
               minute: "2-digit",
@@ -71,15 +72,12 @@ export default function Beranda() {
             })}
           </span>
         </p>
-        <p style={{ textAlign: "center", marginBottom: "0.5rem" }}>
-          Selamat datang di <b>Ruang Konstitusi</b>, portal informasi hukum dan
-          konstitusi Indonesia.
+        <p style={{ textAlign: "center", marginBottom: "0.5rem"}}>
+          Selamat datang di Ruang Konstitusi, portal informasi hukum dan
+          konstitusi Indonesia. Cari beruta dan informasi terbaru seputar hukum,
+          edukasi dan sumber belajar konstitusi, serta update berita nasional dan
+          internasional.
         </p>
-        <ul style={{ textAlign: "left", marginLeft: "1rem" }}>
-          <li>🔎 Cari berita dan informasi terbaru seputar hukum</li>
-          <li>📚 Edukasi dan sumber belajar konstitusi</li>
-          <li>📰 Update berita nasional dan internasional</li>
-        </ul>
       </div>
       {/* Footer selalu di bawah */}
       <footer
@@ -107,7 +105,7 @@ export default function Beranda() {
           boxShadow: "0 -2px 5px rgba(0,0,0,0.3)",
           fontSize: "0.7rem",
           background:
-            "linear-gradient(90deg,rgb(131, 120, 153) 0%, #4a4e69 100%)", // gradien ungu gelap ke abu
+            "linear-gradient(90deg,rgb(75, 53, 4) 0%, rgb(0, 0, 0) 100%)", // gradien ungu gelap ke abu
         }}
       >
         &copy; {new Date().getFullYear()} Ruang Konstitusi. All rights reserved.

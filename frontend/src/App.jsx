@@ -10,7 +10,7 @@ export default function App() {
       <nav
         className="navbar navbar-expand"
         style={{
-          background: "linear-gradient(90deg,rgb(4, 4, 209) 0%, #4a4e69 100%)", // gradien ungu gelap ke abu
+          background: "linear-gradient(90deg,rgb(75, 53, 4) 0%,rgb(0, 0, 0) 100%)", // gradien ungu gelap ke abu
           fontFamily: "PoppinsCustom, 'Segoe UI', Arial, sans-serif",
           fontWeight: "bold",
         }}
