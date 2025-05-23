@@ -24,7 +24,7 @@ export default function Beranda() {
     if (hour < 12) return "SELAMAT PAGI";
     if (hour < 15) return "SELAMAT SIANG";
     if (hour < 18) return "SELAMAT SORE";
-    return "Selamat Malam";
+    return "SELAMAT MALAM";
   };
 
   return (
@@ -41,7 +41,7 @@ export default function Beranda() {
       <div
         className="text-start" // ubah dari text-center ke text-start
         style={{
-          background: "rgba(0,0,0,0.5)",
+          background: "rgb(0, 0, 0, 0.4)", // gradien ungu gelap ke abu
           padding: "2rem",
           borderRadius: "20px",
           color: "#fff",
@@ -51,20 +51,20 @@ export default function Beranda() {
       >
         <h1
           style={{
-            fontFamily: "'PoppinsCustom', 'Segoe UI', Arial, sans-serif",
+            fontFamily: "'segoe UI'",
             fontWeight: 700,
-            letterSpacing: "2px",
-            fontSize: "4rem",
-            textShadow: "2px 2px 8px rgba(0,0,0,0.5)",
+            letterSpacing: "1px",
+            fontSize: "3rem",
+            textShadow: "2px 2px 8px rgb(0, 0, 0)", // efek bayangan pada teks)",
             textAlign: "center", // pastikan text header rata kiri
-            color: "rgb(0, 0, 0)", // warna teks header
+            color: "rgb(255, 255, 255)", // warna teks header
           }}
         >
           {getGreeting()} 
         </h1>
-        <p style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+        <p style={{ textAlign: "center", fontFamily: "digital", }}>
           {" "}
-          <span style={{ fontWeight: "bold" , fontSize: "3rem", color: "rgb(255, 205, 205)" }}>
+          <span style={{ fontWeight: "bold" , fontSize: "5rem", color: "rgb(255, 255, 255)", textShadow: "2px 2px 8px rgb(0, 0, 0)" }}>
             {now.toLocaleTimeString("id-ID", {
               hour: "2-digit",
               minute: "2-digit",
@@ -72,7 +72,7 @@ export default function Beranda() {
             })}
           </span>
         </p>
-        <p style={{ textAlign: "center", marginBottom: "0.5rem"}}>
+        <p style={{ textAlign: "center", marginBottom: "0.5rem", fontFamily: "poppinsCustom", fontStyle: "italic" }}>
           Selamat datang di Ruang Konstitusi, portal informasi hukum dan
           konstitusi Indonesia. Cari beruta dan informasi terbaru seputar hukum,
           edukasi dan sumber belajar konstitusi, serta update berita nasional dan
@@ -105,7 +105,7 @@ export default function Beranda() {
           boxShadow: "0 -2px 5px rgba(0,0,0,0.3)",
           fontSize: "0.7rem",
           background:
-            "linear-gradient(90deg,rgb(75, 53, 4) 0%, rgb(0, 0, 0) 100%)", // gradien ungu gelap ke abu
+            "linear-gradient(90deg,rgb(75, 53, 4) 0%, rgb(0, 0, 0) 50%)", // gradien ungu gelap ke abu
         }}
       >
         &copy; {new Date().getFullYear()} Ruang Konstitusi. All rights reserved.

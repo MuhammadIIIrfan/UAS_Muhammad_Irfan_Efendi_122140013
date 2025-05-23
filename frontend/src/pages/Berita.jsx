@@ -9,7 +9,7 @@ export default function Berita() {
   }, []);
   return (
     <div className="container mt-5">
-      <h2>Daftar Berita</h2>
+      <h2>DAFTAR BERITA</h2>
       <ul className="list-group">
         {posts.map(post => (
           <li className="list-group-item" key={post.id}>
