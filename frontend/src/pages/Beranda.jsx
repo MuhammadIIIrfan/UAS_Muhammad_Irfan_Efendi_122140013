@@ -9,6 +9,24 @@ export default function Beranda() {
     };
   }, []);
 
+  // State untuk waktu sekarang
+  const [now, setNow] = React.useState(new Date());
+
+  // Update waktu setiap detik
+  React.useEffect(() => {
+    const timer = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Fungsi ucapan berdasarkan jam
+  const getGreeting = () => {
+    const hour = now.getHours();
+    if (hour < 12) return "Selamat Pagi";
+    if (hour < 15) return "Selamat Siang";
+    if (hour < 18) return "Selamat Sore";
+    return "Selamat Malam";
+  };
+
   return (
     <div
       style={{
@@ -25,7 +43,7 @@ export default function Beranda() {
         style={{
           background: "rgba(0,0,0,0.5)",
           padding: "2rem",
-          borderRadius: "12px",
+          borderRadius: "20px",
           color: "#fff",
           maxWidth: "600px",
           margin: "2rem",
@@ -36,14 +54,32 @@ export default function Beranda() {
             fontFamily: "'PoppinsCustom', 'Segoe UI', Arial, sans-serif",
             fontWeight: 700,
             letterSpacing: "2px",
-            fontSize: "2.8rem",
+            fontSize: "4rem",
             textShadow: "2px 2px 8px rgba(0,0,0,0.5)",
             textAlign: "center", // pastikan text header rata kiri
           }}
         >
-          Ruang Konstitusi
+          {getGreeting()} 
         </h1>
-        <p style={{ textAlign: "center" }}>Negara Indonesia adalah Negara Hukum.</p>
+        <p style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+          {" "}
+          <span style={{ fontWeight: "bold" , fontSize: "1.5rem" }}>
+            {now.toLocaleTimeString("id-ID", {
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+            })}
+          </span>
+        </p>
+        <p style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+          Selamat datang di <b>Ruang Konstitusi</b>, portal informasi hukum dan
+          konstitusi Indonesia.
+        </p>
+        <ul style={{ textAlign: "left", marginLeft: "1rem" }}>
+          <li>🔎 Cari berita dan informasi terbaru seputar hukum</li>
+          <li>📚 Edukasi dan sumber belajar konstitusi</li>
+          <li>📰 Update berita nasional dan internasional</li>
+        </ul>
       </div>
       {/* Footer selalu di bawah */}
       <footer
@@ -70,7 +106,8 @@ export default function Beranda() {
           zIndex: 10,
           boxShadow: "0 -2px 5px rgba(0,0,0,0.3)",
           fontSize: "0.7rem",
-          background: "linear-gradient(90deg,rgb(131, 120, 153) 0%, #4a4e69 100%)", // gradien ungu gelap ke abu
+          background:
+            "linear-gradient(90deg,rgb(131, 120, 153) 0%, #4a4e69 100%)", // gradien ungu gelap ke abu
         }}
       >
         &copy; {new Date().getFullYear()} Ruang Konstitusi. All rights reserved.
