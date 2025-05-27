@@ -39,7 +39,7 @@ export default function Beranda() {
       }}
     >
       <div
-        className="text-start" // ubah dari text-center ke text-start
+        className="text-start" /* ubah dari text-center ke text-start */
         style={{
           background: "rgb(0, 0, 0, 0.4)", // gradien ungu gelap ke abu
           padding: "2rem",
