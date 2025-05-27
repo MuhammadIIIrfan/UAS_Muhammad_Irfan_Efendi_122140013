@@ -72,11 +72,8 @@ export default function Beranda() {
             })}
           </span>
         </p>
-        <p style={{ textAlign: "center", marginBottom: "0.5rem", fontFamily: "poppinsCustom", fontStyle: "italic" }}>
-          Selamat datang di Ruang Konstitusi, portal informasi hukum dan
-          konstitusi Indonesia. Cari beruta dan informasi terbaru seputar hukum,
-          edukasi dan sumber belajar konstitusi, serta update berita nasional dan
-          internasional.
+        <p style={{ textAlign: "center", marginBottom: "0.5rem", fontFamily: "poppinsCustom", fontStyle: "italic", fontSize: "1.2rem" }}>
+          Selamat datang di Ruang Konstitusi, platform yang mengedukasi dan menginspirasi masyarakat tentang konstitusi dan hukum di Indonesia.
         </p>
       </div>
       {/* Footer selalu di bawah */}
